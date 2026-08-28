@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+class OddEven {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter array size: ");
+        int size = sc.nextInt();
+
+        int[] arr = new int[size];
+
+        int oddCount = 0;
+        int evenCount = 0;
+
+        System.out.println("Enter array elements:");
+
+        for (int i = 0; i < size; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        for (int i = 0; i < size; i++) {
+
+            if (arr[i] % 2 == 0) {
+                evenCount++;
+            } else {
+                oddCount++;
+            }
+        }
+
+        System.out.println("Even Count = " + evenCount);
+        System.out.println("Odd Count = " + oddCount);
+    }
+}
