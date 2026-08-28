@@ -1,0 +1,43 @@
+import java.util.*;
+
+class BinarySearch {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int size = sc.nextInt();
+        int[] arr = new int[size];
+
+        for (int i = 0; i < size; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        int l = 0;
+        int r = size - 1;
+
+        int target = sc.nextInt();
+        int p = -1;
+
+        while (l <= r) {
+            int m = l + (r - l) / 2;
+
+            if (arr[m] == target) {
+                p = m;
+                break;
+            } 
+            else if (arr[m] < target) {
+                l = m + 1;
+            } 
+            else {
+                r = m - 1;
+            }
+        }
+
+        if (p != -1) {
+            System.out.println("Element found at " + p);
+        } 
+        else {
+            System.out.println("Element not found");
+        }
+    }
+}
